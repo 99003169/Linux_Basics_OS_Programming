@@ -1,0 +1,21 @@
+
+    const, volatile keyword prefix with pointers
+    Associativity & precedence in expressions like *ptr++
+    typedef usage with anonymous enums, struct
+    alignment issues with structures - padding bits, offset analysis
+    endianness - packing/unpacking bytes with a) bitwise operators b) bit fields c) pointers d) unions
+    designated initializers with structures, arrays
+    structures - efficient param passing - by addr (const T *) instead of by value
+    Avoid returning structures, convert them as fetch params
+    function pointers as callbacks (passing functions to other function), void* pointers
+    array of function pointers (dispatch tables)
+    own implementation of string functions
+    string to int conversions (strtoul), building strings (sprintf, snprintf etc)
+    memory functions - memcpy, memset, bzero, memcmp etc
+    Table of strings -- 2D char array or array of strings
+    variable length args - va_list,va_arg, va_start, va_end...
+    why to avoid macros, when to really use macros (macros vs inline functions)
+    conditional inclusion directives (#if, #ifdef, #ifndef, #else, #elif, #undef etc)
+    Header guard technique
+    Special constants : __FILE__, __LINE__ etc
+    dynamic memory APIs, memory leaks & other heap errors

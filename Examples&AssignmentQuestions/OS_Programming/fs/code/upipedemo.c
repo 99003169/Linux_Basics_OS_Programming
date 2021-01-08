@@ -3,7 +3,6 @@
 int main()
 {
 	int ret;
-	int nbytes = 0;
 	int fds[2];
 	ret=pipe(fds);	//fds[0]-RD, fds[1]-WR
 	if(ret<0)
@@ -27,11 +26,8 @@ int main()
 	{
 		close(fds[0]);	//no read
         //some delay
-		char str[] = "Hello FIFO\n";
+		char str[]="Hello FIFO";
 		int len=strlen(str);
-		nbytes=write(fds[1],str,len);
-		char str1[]="Hi, I'm Megha.";
-		len=strlen(str);
 		nbytes=write(fds[1],str,len);
 		//error handling
 		close(fds[1]);	//done with writing
