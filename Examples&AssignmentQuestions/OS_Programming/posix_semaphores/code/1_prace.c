@@ -13,7 +13,7 @@ void* tentry_fun1(void* pv)
 	{
 		val++;
 	}
-	//pthread_exit(NULL);
+	pthread_exit(NULL);
 }
 void* tentry_fun2(void* pv)
 {
@@ -23,7 +23,7 @@ void* tentry_fun2(void* pv)
 	{
 		val--;
 	}
-	//pthread_exit(NULL);
+	pthread_exit(NULL);
 }
 int main()
 {
@@ -32,7 +32,7 @@ int main()
 	pthread_create(&pt2,NULL,tentry_fun2,NULL);
 	pthread_join(pt1,NULL);
 	pthread_join(pt2,NULL);
-	printf("main--final value=%d\n",val);
+	printf("main --- final value = %d\n",val);
 	return 0;	//exit(0);
 }
 

@@ -3,13 +3,9 @@ Write a program to copy one file contents to other using open,read,write,close s
 (like cp command, which takes source, destination files as cmd line args)
 */
 
-#include<stdio.h>
-#include<unistd.h>
-#include<stdlib.h>
-#include<fcntl.h>
-#include<string.h>
+#include "file_copy.h"
 
-int main(){
+void copyfile(void){
     int fr;
     fr = open("input.txt", O_RDONLY);
     if(fr<0){

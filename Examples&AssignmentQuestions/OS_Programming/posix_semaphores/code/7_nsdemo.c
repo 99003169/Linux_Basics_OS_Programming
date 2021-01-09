@@ -1,7 +1,7 @@
 #include<unistd.h>
 #include<semaphore.h>
 #include<fcntl.h>
-
+#include<sys/stat.h>
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -21,7 +21,7 @@ int main()
 		for(i=1;i<=max;i++)
 		{
 			printf("child--%d\n",i);
-			sleep(1);
+			//sleep(1);
 		}
 		sem_post(ps);
 		sem_post(qs);
@@ -43,8 +43,8 @@ int main()
 		sem_unlink("s1");
 		sem_unlink("s2");
 	}
-	//printf("thank you,pid=%d,ppid=%d\n",
-	//		getpid(),getppid());
+	printf("thank you,pid=%d,ppid=%d\n",
+			getpid(),getppid());
 	return 0;
 }
 /** TODO:- locate named semaphore in /dev/shm before unlinking */

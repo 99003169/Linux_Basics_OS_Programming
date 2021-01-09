@@ -1,7 +1,8 @@
 #include<unistd.h>
-
 #include<stdio.h>
 #include<stdlib.h>
+#include<sys/types.h>
+#include<sys/wait.h>
 
 int main()
 {
@@ -30,8 +31,8 @@ int main()
 		}
 	    waitpid(-1,&status,0);
 	}
-	//printf("thank you,pid=%d,ppid=%d\n",
-	//		getpid(),getppid());
+	printf("thank you,pid=%d,ppid=%d\n",
+			getpid(),getppid());
 	return 0;
 }
 

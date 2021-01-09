@@ -13,7 +13,7 @@ void* tentry_fun1(void* pv)	//consumer
 		printf("A--%d\n",i);
 		sleep(1);
 	}
-	//pthread_exit(NULL);
+	pthread_exit(NULL);
 }
 void* tentry_fun2(void* pv)	//producer
 {
@@ -24,7 +24,7 @@ void* tentry_fun2(void* pv)	//producer
 		printf("B--%d\n",i);
 		sleep(1);
 	}
-	//pthread_exit(NULL);
+	pthread_exit(NULL);
 }
 int main()
 {

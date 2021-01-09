@@ -3,7 +3,7 @@
 #include<semaphore.h>
 
 int val=100;
-const int max=1000000;
+const int max=100;
 sem_t s1;
 
 void* tentry_fun1(void* pv)
@@ -14,10 +14,13 @@ void* tentry_fun1(void* pv)
 	{
 		sem_wait(&s1);
 		val++;
+		printf("%d\n", val);
+		//sleep(1);
 		sem_post(&s1);
 	}
-	//pthread_exit(NULL);
+	pthread_exit(NULL);
 }
+
 void* tentry_fun2(void* pv)
 {
 	int i;
@@ -26,10 +29,13 @@ void* tentry_fun2(void* pv)
 	{
 		sem_wait(&s1);
 		val--;
+		printf("%d\n", val);
+		//sleep(1);
 		sem_post(&s1);
 	}
-	//pthread_exit(NULL);
+	pthread_exit(NULL);
 }
+
 int main()
 {
 	pthread_t pt1,pt2;	//thread handle

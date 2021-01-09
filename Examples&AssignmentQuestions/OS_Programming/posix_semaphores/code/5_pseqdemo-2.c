@@ -15,11 +15,11 @@ void* efun1(void* pv)		//producer
 	for(i=1;i<=max;i++)
 	{
 		printf("A--%d\n",i);
-		sleep(1);
+		//sleep(1);
 	}
 	pthread_mutex_unlock(&m1);
 	sem_post(&s1);
-	//pthread_exit(NULL);
+	pthread_exit(NULL);
 }
 void* efun2(void* pv)		//consumer
 {
@@ -30,10 +30,10 @@ void* efun2(void* pv)		//consumer
 	for(i=1;i<=max;i++)
 	{
 		printf("B--%d\n",i);
-		sleep(1);
+		//sleep(1);
 	}
 	pthread_mutex_unlock(&m1);
-	//pthread_exit(NULL);
+	pthread_exit(NULL);
 }
 int main()
 {

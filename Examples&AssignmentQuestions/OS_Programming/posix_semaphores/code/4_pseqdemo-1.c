@@ -15,10 +15,10 @@ void* tentry_fun1(void* pv)	//consumer
 	for(i=1;i<=max;i++)
 	{
 		printf("A--%d\n",i);
-		sleep(1);
+		//sleep(1);
 	}
 	sem_post(&s1);
-	//pthread_exit(NULL);
+	pthread_exit(NULL);
 }
 void* tentry_fun2(void* pv)	//producer
 {
@@ -28,11 +28,11 @@ void* tentry_fun2(void* pv)	//producer
 	for(i=1;i<=max;i++)
 	{
 		printf("B--%d\n",i);
-		sleep(1);
+		//sleep(1);
 	}
 	sem_post(&s1);
 	sem_post(&s2);
-	//pthread_exit(NULL);
+	pthread_exit(NULL);
 }
 int main()
 {

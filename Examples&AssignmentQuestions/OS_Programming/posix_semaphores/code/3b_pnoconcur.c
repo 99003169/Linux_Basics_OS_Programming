@@ -16,7 +16,7 @@ void* tentry_fun1(void* pv)	//consumer
 		sleep(1);
 	}
 	sem_post(&s1);
-	//pthread_exit(NULL);
+	pthread_exit(NULL);
 }
 void* tentry_fun2(void* pv)	//producer
 {
@@ -29,7 +29,7 @@ void* tentry_fun2(void* pv)	//producer
 		sleep(1);
 	}
 	sem_post(&s1);
-	//pthread_exit(NULL);
+	pthread_exit(NULL);
 }
 int main()
 {
